@@ -59,6 +59,7 @@ protected:
 public:
 
     Setting();
+    virtual ~Setting() = default;
 
     virtual void Update() = 0;
 

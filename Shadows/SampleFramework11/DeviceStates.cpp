@@ -17,13 +17,20 @@ namespace SampleFramework11
 
 void BlendStates::Initialize(ID3D11Device* device)
 {
-    DXCall(device->CreateBlendState(&BlendDisabledDesc(), &blendDisabled));
-    DXCall(device->CreateBlendState(&AdditiveBlendDesc(), &additiveBlend));
-    DXCall(device->CreateBlendState(&AlphaBlendDesc(), &alphaBlend));
-    DXCall(device->CreateBlendState(&PreMultipliedAlphaBlendDesc(), &pmAlphaBlend));
-    DXCall(device->CreateBlendState(&ColorWriteDisabledDesc(), &noColor));
-    DXCall(device->CreateBlendState(&AlphaToCoverageDesc(), &alphaToCoverage));
-    DXCall(device->CreateBlendState(&OpacityBlendDesc(), &opacityBlend));
+    D3D11_BLEND_DESC tmp = BlendDisabledDesc();
+    DXCall(device->CreateBlendState(&tmp, &blendDisabled));
+    tmp = AdditiveBlendDesc();
+    DXCall(device->CreateBlendState(&tmp, &additiveBlend));
+    tmp = AlphaBlendDesc();
+    DXCall(device->CreateBlendState(&tmp, &alphaBlend));
+    tmp = PreMultipliedAlphaBlendDesc();
+    DXCall(device->CreateBlendState(&tmp, &pmAlphaBlend));
+    tmp = ColorWriteDisabledDesc();
+    DXCall(device->CreateBlendState(&tmp, &noColor));
+    tmp = AlphaToCoverageDesc();
+    DXCall(device->CreateBlendState(&tmp, &alphaToCoverage));
+    tmp = OpacityBlendDesc();
+    DXCall(device->CreateBlendState(&tmp, &opacityBlend));
 }
 
 D3D11_BLEND_DESC BlendStates::BlendDisabledDesc()
@@ -170,14 +177,22 @@ D3D11_BLEND_DESC BlendStates::OpacityBlendDesc()
 
 void RasterizerStates::Initialize(ID3D11Device* device)
 {
-    DXCall(device->CreateRasterizerState(&NoCullDesc(), &noCull));
-    DXCall(device->CreateRasterizerState(&FrontFaceCullDesc(), &cullFrontFaces));
-    DXCall(device->CreateRasterizerState(&FrontFaceCullScissorDesc(), &cullFrontFacesScissor));
-    DXCall(device->CreateRasterizerState(&BackFaceCullDesc(), &cullBackFaces));
-    DXCall(device->CreateRasterizerState(&BackFaceCullScissorDesc(), &cullBackFacesScissor));
-    DXCall(device->CreateRasterizerState(&NoCullNoMSDesc(), &noCullNoMS));
-    DXCall(device->CreateRasterizerState(&NoCullScissorDesc(), &noCullScissor));
-    DXCall(device->CreateRasterizerState(&WireframeDesc(), &wireframe));
+    D3D11_RASTERIZER_DESC tmp = NoCullDesc();
+    DXCall(device->CreateRasterizerState(&tmp, &noCull));
+    tmp = FrontFaceCullDesc();
+    DXCall(device->CreateRasterizerState(&tmp, &cullFrontFaces));
+    tmp = FrontFaceCullScissorDesc();
+    DXCall(device->CreateRasterizerState(&tmp, &cullFrontFacesScissor));
+    tmp = BackFaceCullDesc();
+    DXCall(device->CreateRasterizerState(&tmp, &cullBackFaces));
+    tmp = BackFaceCullScissorDesc();
+    DXCall(device->CreateRasterizerState(&tmp, &cullBackFacesScissor));
+    tmp = NoCullNoMSDesc();
+    DXCall(device->CreateRasterizerState(&tmp, &noCullNoMS));
+    tmp = NoCullScissorDesc();
+    DXCall(device->CreateRasterizerState(&tmp, &noCullScissor));
+    tmp = WireframeDesc();
+    DXCall(device->CreateRasterizerState(&tmp, &wireframe));
 }
 
 D3D11_RASTERIZER_DESC RasterizerStates::NoCullDesc()
@@ -326,13 +341,20 @@ D3D11_RASTERIZER_DESC RasterizerStates::WireframeDesc()
 
 void DepthStencilStates::Initialize(ID3D11Device* device)
 {
-    DXCall(device->CreateDepthStencilState(&DepthDisabledDesc(), &depthDisabled));
-    DXCall(device->CreateDepthStencilState(&DepthEnabledDesc(), &depthEnabled));
-    DXCall(device->CreateDepthStencilState(&ReverseDepthEnabledDesc(), &revDepthEnabled));
-    DXCall(device->CreateDepthStencilState(&DepthWriteEnabledDesc(), &depthWriteEnabled));
-    DXCall(device->CreateDepthStencilState(&ReverseDepthWriteEnabledDesc(), &revDepthWriteEnabled));
-    DXCall(device->CreateDepthStencilState(&DepthStencilWriteEnabledDesc(), &depthStencilWriteEnabled));
-    DXCall(device->CreateDepthStencilState(&StencilEnabledDesc(), &stencilEnabled));
+    D3D11_DEPTH_STENCIL_DESC tmp = DepthDisabledDesc();
+    DXCall(device->CreateDepthStencilState(&tmp, &depthDisabled));
+    tmp = DepthEnabledDesc();
+    DXCall(device->CreateDepthStencilState(&tmp, &depthEnabled));
+    tmp = ReverseDepthEnabledDesc();
+    DXCall(device->CreateDepthStencilState(&tmp, &revDepthEnabled));
+    tmp = DepthWriteEnabledDesc();
+    DXCall(device->CreateDepthStencilState(&tmp, &depthWriteEnabled));
+    tmp = ReverseDepthWriteEnabledDesc();
+    DXCall(device->CreateDepthStencilState(&tmp, &revDepthWriteEnabled));
+    tmp = DepthStencilWriteEnabledDesc();
+    DXCall(device->CreateDepthStencilState(&tmp, &depthStencilWriteEnabled));
+    tmp = StencilEnabledDesc();
+    DXCall(device->CreateDepthStencilState(&tmp, &stencilEnabled));
 }
 
 D3D11_DEPTH_STENCIL_DESC DepthStencilStates::DepthDisabledDesc()
@@ -463,13 +485,20 @@ D3D11_DEPTH_STENCIL_DESC DepthStencilStates::StencilEnabledDesc()
 
 void SamplerStates::Initialize(ID3D11Device* device)
 {
-    DXCall(device->CreateSamplerState(&LinearDesc(), &linear));
-    DXCall(device->CreateSamplerState(&LinearClampDesc(), &linearClamp));
-    DXCall(device->CreateSamplerState(&LinearBorderDesc(), &linearBorder));
-    DXCall(device->CreateSamplerState(&PointDesc(), &point));
-    DXCall(device->CreateSamplerState(&AnisotropicDesc(), &anisotropic));
-    DXCall(device->CreateSamplerState(&ShadowMapDesc(), &shadowMap));
-    DXCall(device->CreateSamplerState(&ShadowMapPCFDesc(), &shadowMapPCF));
+    D3D11_SAMPLER_DESC tmp = LinearDesc();
+    DXCall(device->CreateSamplerState(&tmp, &linear));
+    tmp = LinearClampDesc();
+    DXCall(device->CreateSamplerState(&tmp, &linearClamp));
+    tmp = LinearBorderDesc();
+    DXCall(device->CreateSamplerState(&tmp, &linearBorder));
+    tmp = PointDesc();
+    DXCall(device->CreateSamplerState(&tmp, &point));
+    tmp = AnisotropicDesc();
+    DXCall(device->CreateSamplerState(&tmp, &anisotropic));
+    tmp = ShadowMapDesc();
+    DXCall(device->CreateSamplerState(&tmp, &shadowMap));
+    tmp = ShadowMapPCFDesc();
+    DXCall(device->CreateSamplerState(&tmp, &shadowMapPCF));
 }
 
 D3D11_SAMPLER_DESC SamplerStates::LinearDesc()

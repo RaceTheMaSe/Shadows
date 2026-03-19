@@ -16,6 +16,8 @@
 namespace SampleFramework11
 {
 
+const uint64 SpriteRenderer::MaxBatchSize;
+
 SpriteRenderer::SpriteRenderer()
     : initialized(false)
 {

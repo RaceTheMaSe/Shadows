@@ -13,7 +13,7 @@
 
 // This version only supports UNICODE.
 #include "PCH.h"
-#include "dxerr.h"
+#include "dxerr9.h"
 
 #define XAUDIO2_E_INVALID_CALL          0x88960001
 #define XAUDIO2_E_XMA_DECODER_ERROR     0x88960002
@@ -38,30 +38,33 @@
 
 #pragma warning( disable : 6001 6221 )
 
+#define STRINGIFY_W_(x)     L##x
+#define STRINGIFY_W(x)      STRINGIFY_W_(#x)
+
 //--------------------------------------------------------------------------------------
 #define  CHK_ERR(hrchk, strOut) \
         case hrchk: \
-             return L##strOut;
+             return STRINGIFY_W(strOut);
 
 #define  CHK_ERRA(hrchk) \
         case hrchk: \
-             return L#hrchk;
+             return STRINGIFY_W(hrchk);
 
 #define HRESULT_FROM_WIN32b(x) ((HRESULT)(x) <= 0 ? ((HRESULT)(x)) : ((HRESULT) (((x) & 0x0000FFFF) | (FACILITY_WIN32 << 16) | 0x80000000)))
 
 #define  CHK_ERR_WIN32A(hrchk) \
         case HRESULT_FROM_WIN32b(hrchk): \
         case hrchk: \
-             return L#hrchk;
+             return STRINGIFY_W(hrchk);
 
 #define  CHK_ERR_WIN32_ONLY(hrchk, strOut) \
         case HRESULT_FROM_WIN32b(hrchk): \
-             return L##strOut;
+             return STRINGIFY_W(strOut);
 
 //-----------------------------------------------------
 const wchar* WINAPI DXGetErrorStringW( _In_ HRESULT hr )
 {
-   switch(hr)
+   switch((ptrdiff_t)hr)
    {
 // Commmented out codes are actually alises for other codes
 
@@ -3105,11 +3108,11 @@ const wchar* WINAPI DXGetErrorStringW( _In_ HRESULT hr )
 
 #define  CHK_ERRA(hrchk) \
         case hrchk: \
-             wcscpy_s( desc, count, L#hrchk );
+             wcscpy_s( desc, count, STRINGIFY_W(hrchk) );
 
 #define  CHK_ERR(hrchk, strOut) \
         case hrchk: \
-             wcscpy_s( desc, count, L##strOut );
+             wcscpy_s( desc, count, STRINGIFY_W(strOut) );
 
 
 //--------------------------------------------------------------------------------------

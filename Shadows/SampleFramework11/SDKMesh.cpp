@@ -121,18 +121,18 @@ HRESULT SDKMesh::CreateFromMemory( BYTE* pData,
         m_pMeshArray[i].pFrameInfluences = ( UINT* )( m_pStaticMeshData + m_pMeshArray[i].FrameInfluenceOffset );
     }
 
+    // Setup buffer data pointer
+    BYTE* pBufferData = pData + m_pMeshHeader->HeaderSize + m_pMeshHeader->NonBufferDataSize;
+
+    // Get the start of the buffer data
+    uint64 BufferDataStart = m_pMeshHeader->HeaderSize + m_pMeshHeader->NonBufferDataSize;
+
     // error condition
     if( m_pMeshHeader->Version != SDKMESH_FILE_VERSION )
     {
         hr = E_NOINTERFACE;
         goto Error;
     }
-
-    // Setup buffer data pointer
-    BYTE* pBufferData = pData + m_pMeshHeader->HeaderSize + m_pMeshHeader->NonBufferDataSize;
-
-    // Get the start of the buffer data
-    uint64 BufferDataStart = m_pMeshHeader->HeaderSize + m_pMeshHeader->NonBufferDataSize;
 
     // Create VBs
     m_ppVertices = new BYTE*[m_pMeshHeader->NumVertexBuffers];
@@ -267,6 +267,8 @@ D3D11_PRIMITIVE_TOPOLOGY SDKMesh::GetPrimitiveType11( SDKMESH_PRIMITIVE_TYPE Pri
             break;
         case PT_LINE_STRIP_ADJ:
             retType = D3D11_PRIMITIVE_TOPOLOGY_LINESTRIP_ADJ;
+            break;
+        default:
             break;
     };
 

@@ -280,7 +280,7 @@ public:
 };
 
 // For aligning to float4 boundaries
-#define Float4Align __declspec(align(16))
+#define Float4Align alignas(16)
 
 class PIXEvent
 {

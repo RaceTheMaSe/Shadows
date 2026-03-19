@@ -8,9 +8,10 @@
 //
 //=================================================================================================
 
-#if _WINDOWS
+#ifndef SHADER_CONSTANTS_H
+#define SHADER_CONSTANTS_H
 
-#pragma once
+#if _WIN32
 
 typedef Float2 float2;
 typedef Float3 float3;
@@ -53,3 +54,5 @@ struct CulledDraw
     uint DstIndexStart;
     uint NumIndices;
 };
+
+#endif

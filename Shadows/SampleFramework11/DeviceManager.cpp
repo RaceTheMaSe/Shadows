@@ -135,7 +135,7 @@ void DeviceManager::Initialize(HWND outputWindow)
 
 void DeviceManager::AfterReset()
 {
-    DXCall(swapChain->GetBuffer(0, __uuidof(bbTexture), reinterpret_cast<void**>(&bbTexture)));
+    DXCall(swapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), reinterpret_cast<void**>(&bbTexture)));
     DXCall(device->CreateRenderTargetView(bbTexture, NULL, &bbRTView));
 
     // Set default render targets

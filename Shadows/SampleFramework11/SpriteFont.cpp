@@ -41,7 +41,7 @@ void SpriteFont::Initialize(LPCWSTR fontName, float fontSize, UINT fontStyle, bo
     TextRenderingHint hint = antiAliased ? TextRenderingHintAntiAliasGridFit : TextRenderingHintSingleBitPerPixelGridFit;
 
     // Init GDI+
-    ULONG_PTR token = NULL;
+    ULONG_PTR token = 0;
     GdiplusStartupInput startupInput (NULL, true, true);
     GdiplusStartupOutput startupOutput;
     GdiPlusCall(GdiplusStartup(&token, &startupInput, &startupOutput));
@@ -175,7 +175,8 @@ void SpriteFont::Initialize(LPCWSTR fontName, float fontSize, UINT fontStyle, bo
 
         // Lock the bitmap for direct memory access
         BitmapData bmData;
-        GdiPlusCall(textBitmap.LockBits(&Rect(0, 0, TexWidth, texHeight), ImageLockModeRead, PixelFormat32bppARGB, &bmData));
+        Rect rect(0, 0, TexWidth, texHeight);
+        GdiPlusCall(textBitmap.LockBits(&rect,ImageLockModeRead, PixelFormat32bppARGB, &bmData));
 
         // Create a D3D texture, initalized with the bitmap data
         D3D11_TEXTURE2D_DESC texDesc;
@@ -212,7 +213,7 @@ void SpriteFont::Initialize(LPCWSTR fontName, float fontSize, UINT fontStyle, bo
     catch (GdiPlusException e)
     {
         // Shutdown GDI+
-        if (token != NULL)
+        if (token != 0)
             GdiplusShutdown(token);
         throw e;
     }

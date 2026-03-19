@@ -38,7 +38,7 @@ void Profiler::StartProfile(const wstring& name)
     profileData.CPUProfile = false;
     profileData.Active = true;
 
-    if(profileData.DisjointQuery[currFrame] == NULL)
+    if(profileData.DisjointQuery[currFrame] == false)
     {
         // Create the queries
         D3D11_QUERY_DESC desc;
@@ -138,7 +138,7 @@ void Profiler::EndFrame(SpriteRenderer& spriteRenderer, SpriteFont& spriteFont)
         }
         else
         {
-            if(profile.DisjointQuery[currFrame] == NULL)
+            if(profile.DisjointQuery[currFrame] == false)
                 continue;
 
             // Get the query data

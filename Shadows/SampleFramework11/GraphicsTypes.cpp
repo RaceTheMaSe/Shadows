@@ -14,6 +14,7 @@
 #include "Utility.h"
 #include "Serialization.h"
 #include "FileIO.h"
+#include <crtdbg.h>
 
 namespace SampleFramework11
 {
@@ -27,7 +28,7 @@ RenderTarget2D::RenderTarget2D() :  Width(0),
                                     MultiSamples(0),
                                     MSQuality(0),
                                     AutoGenMipMaps(false),
-                                    UAView(nullptr),
+                                    UAView(0),
                                     ArraySize(1)
 {
 

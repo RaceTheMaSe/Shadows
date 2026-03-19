@@ -11,7 +11,7 @@
 
 #include "Model.h"
 
-#include "SDKmesh.h"
+#include "SDKMesh.h"
 #include "Exceptions.h"
 #include "Utility.h"
 #include "GraphicsTypes.h"

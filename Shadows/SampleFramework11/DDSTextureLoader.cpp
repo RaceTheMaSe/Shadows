@@ -126,7 +126,7 @@ typedef struct
 //---------------------------------------------------------------------------------
 struct handle_closer { void operator()(HANDLE h) { if (h) CloseHandle(h); } };
 
-typedef public std::unique_ptr<void, handle_closer> ScopedHandle;
+typedef std::unique_ptr<void, handle_closer> ScopedHandle;
 
 inline HANDLE safe_handle( HANDLE h ) { return (h == INVALID_HANDLE_VALUE) ? 0 : h; }
 
@@ -441,6 +441,8 @@ static void GetSurfaceInfo( _In_ size_t width,
     case DXGI_FORMAT_R8G8_B8G8_UNORM:
     case DXGI_FORMAT_G8R8_G8B8_UNORM:
         packed = true;
+        break;
+    default:
         break;
     }
 

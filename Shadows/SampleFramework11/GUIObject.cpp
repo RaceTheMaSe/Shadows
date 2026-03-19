@@ -7,8 +7,6 @@
 //
 //=================================================================================================
 
-#pragma once
-
 #include "PCH.h"
 
 #include "GUIObject.h"
@@ -28,7 +26,7 @@ void GUIObject::InitGlobalResources(ID3D11Device* device)
     barTexture = LoadTexture(device, L"SampleFramework11\\Images\\SliderBar.png");
     knobTexture = LoadTexture(device, L"SampleFramework11\\Images\\SliderKnob.png");
 
-    font.Initialize(L"Microsoft Sans Serif", 8.5f, SpriteFont::Regular, true, device);
+    font.Initialize(L"Tahoma", 8.5f, SpriteFont::Regular, true, device);
 }
 
 }

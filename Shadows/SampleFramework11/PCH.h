@@ -45,9 +45,10 @@
 #include <commctrl.h>
 #include <psapi.h>
 #include <process.h>
+#include <crtdbg.h>
 
 // MSVC COM Support
-#include <comip.h>
+// #include <comip.h>
 #include <comdef.h>
 
 // GDI+
@@ -62,7 +63,7 @@
 
 #include <dxgi.h>
 #include <d3d11.h>
-#include <D3Dcompiler.h>
+#include <d3dcompiler.h>
 #include <d3d9.h>
 
 // DirectX Math
@@ -113,7 +114,7 @@ using namespace DirectX;
 #include <cstdarg>
 
 // AntTweakBar
-#include "..\\..\\Externals\\AntTweakBar\\include\\AntTweakBar.h"
+#include "AntTweakBar.h"
 
 // Static Lib Imports
 #pragma comment(lib, "dxguid.lib")

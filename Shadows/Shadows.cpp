@@ -376,4 +376,5 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int n
 {
     ShadowsApp app;
     app.Run();
+    return 0;
 }

@@ -123,6 +123,7 @@ static ID3DBlob* CompileShader(const wchar* path, const char* functionName, cons
     string shaderCode = GetExpandedShaderCode(path, filePaths);
     wstring cacheName = MakeShaderCacheName(shaderCode, functionName, profile, defines);
 
+#ifndef __MINGW32__
     if(FileExists(cacheName.c_str()))
     {
         File cacheFile(cacheName.c_str(), File::OpenRead);
@@ -139,6 +140,7 @@ static ID3DBlob* CompileShader(const wchar* path, const char* functionName, cons
 
         return decompressedShader[0];
     }
+#endif
 
     std::printf("Compiling shader %s %s %s\n", WStringToAnsi(GetFileName(path).c_str()).c_str(),
                 profile, MakeDefinesString(defines).c_str());
@@ -189,6 +191,7 @@ static ID3DBlob* CompileShader(const wchar* path, const char* functionName, cons
         }
         else
         {
+#ifndef __MINGW32__
             // Compress the shader
             D3D_SHADER_DATA shaderData;
             shaderData.pBytecode = compiledShader->GetBufferPointer();
@@ -208,7 +211,7 @@ static ID3DBlob* CompileShader(const wchar* path, const char* functionName, cons
             // Write the compiled shader to disk
             uint64 shaderSize = compressedShader->GetBufferSize();
             cacheFile.Write(shaderSize, compressedShader->GetBufferPointer());
-
+#endif
             return compiledShader;
         }
     }

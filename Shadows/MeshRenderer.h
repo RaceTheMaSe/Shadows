@@ -32,7 +32,7 @@ struct Sphere
 };
 
 // Represents the 6 planes of a frustum
-Float4Align struct Frustum
+struct Float4Align Frustum
 {
     XMVECTOR Planes[6];
 };

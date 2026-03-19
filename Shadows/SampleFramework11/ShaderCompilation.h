@@ -53,11 +53,11 @@ public:
     CompileOptions CompileOpts;
     bool ForceOptimization;
     ID3DBlobPtr ByteCode;
-    const type_info* Type;
+    const std::type_info* Type;
 
     CompiledShader(const wchar* filePath, const char* functionName,
                    const char* profile, const CompileOptions& compileOptions,
-                   bool forceOptimization, const type_info& type) : FilePath(filePath),
+                   bool forceOptimization, const std::type_info& type) : FilePath(filePath),
                                             FunctionName(functionName),
                                             Profile(profile),
                                             CompileOpts(compileOptions),
