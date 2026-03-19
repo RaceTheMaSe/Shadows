@@ -34,7 +34,7 @@ protected:
 
 public:
 
-    T Coefficients[N];
+    T Coefficients[N] = {};
 
     SH()
     {
@@ -196,7 +196,7 @@ typedef SH<Float3, 4> H4Color;
 // For proper alignment with shader constant buffers
 struct ShaderSH9Color
 {
-    Float4 Coefficients[9];
+    Float4 Coefficients[9] = {};
 
     ShaderSH9Color()
     {

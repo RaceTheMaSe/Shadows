@@ -85,20 +85,20 @@ private:
 private:
 
 	// Window properties
-	HWND hwnd;			        // The window handle
-	HINSTANCE hinstance;		// The HINSTANCE of the application
-	std::wstring appName;		// The name of the application
-	DWORD style;			    // The current window style
-	DWORD exStyle;		        // The extended window style
-	HACCEL accelTable;		    // Accelerator table handle
+	HWND hwnd = {};			        // The window handle
+	HINSTANCE hinstance = {};		// The HINSTANCE of the application
+	std::wstring appName = {};		// The name of the application
+	DWORD style = {};			    // The current window style
+	DWORD exStyle = {};		        // The extended window style
+	HACCEL accelTable = {};		    // Accelerator table handle
 
     struct Callback
     {
-        MsgFunction Function;
-        void* Context;
+        MsgFunction Function = {};
+        void* Context = {};
     };
 
-	std::map<UINT, Callback> messageCallbacks;		    // Message callback map
+	std::map<UINT, Callback> messageCallbacks = {};		    // Message callback map
 };
 
 }

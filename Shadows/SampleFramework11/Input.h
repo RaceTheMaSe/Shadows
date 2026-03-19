@@ -16,9 +16,9 @@ namespace SampleFramework11
 
 struct KeyState
 {
-    bool Pressed;
-    bool RisingEdge;
-    bool FallingEdge;
+    bool Pressed = {};
+    bool RisingEdge = {};
+    bool FallingEdge = {};
 
     KeyState();
 };
@@ -33,16 +33,16 @@ public:
     static MouseState GetMouseState(HWND hwnd = NULL);
     static void SetCursorPos(int x, int y, HWND hwnd = NULL);
 
-    int X;
-    int Y;
-    int DX;
-    int DY;
+    int X = {};
+    int Y = {};
+    int DX = {};
+    int DY = {};
 
-    KeyState LButton;
-    KeyState MButton;
-    KeyState RButton;
+    KeyState LButton = {};
+    KeyState MButton = {};
+    KeyState RButton = {};
 
-    bool IsOverWindow;
+    bool IsOverWindow = {};
 
 private:
 
@@ -228,7 +228,7 @@ public:
 
 private:
 
-    KeyState keyStates[256];
+    KeyState keyStates[256] = {};
 
     static KeyboardState prevState;
     static BYTE currState[256];

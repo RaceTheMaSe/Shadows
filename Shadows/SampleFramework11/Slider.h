@@ -55,18 +55,18 @@ protected:
     static const UINT TextureWidth = 512;
     static const UINT TextureHeight = 64;
 
-    Float2 size;
-    float minVal;
-    float maxVal;
-    UINT numSteps;
-    float value;
-    std::wstring name;
-    bool dragging;
-    float dragValue;
-    bool hover;
-    bool mouseDown;
-    Float2 dragPos;
-    bool changed;
+    Float2 size = {};
+    float minVal = {};
+    float maxVal = {};
+    UINT numSteps = {};
+    float value = {};
+    std::wstring name = {};
+    bool dragging = {};
+    float dragValue = {};
+    bool hover = {};
+    bool mouseDown = {};
+    Float2 dragPos = {};
+    bool changed = {};
 
     Float4 GetKnobBounds();
     void CalcValue(float normalizedValue);

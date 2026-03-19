@@ -19,21 +19,21 @@ namespace SampleFramework11
 
 struct RenderTarget2D
 {
-    ID3D11Texture2DPtr Texture;
-    ID3D11RenderTargetViewPtr RTView;
-    ID3D11ShaderResourceViewPtr SRView;
-    ID3D11UnorderedAccessViewPtr UAView;
-    uint32 Width;
-    uint32 Height;
-    uint32 NumMipLevels;
-    uint32 MultiSamples;
-    uint32 MSQuality;
-    DXGI_FORMAT Format;
-    bool32 AutoGenMipMaps;
-    uint32 ArraySize;
-    bool32 CubeMap;
-    std::vector<ID3D11RenderTargetViewPtr> RTVArraySlices;
-    std::vector<ID3D11ShaderResourceViewPtr> SRVArraySlices;
+    ID3D11Texture2DPtr Texture = {};
+    ID3D11RenderTargetViewPtr RTView = {};
+    ID3D11ShaderResourceViewPtr SRView = {};
+    ID3D11UnorderedAccessViewPtr UAView = {};
+    uint32 Width = {};
+    uint32 Height = {};
+    uint32 NumMipLevels = {};
+    uint32 MultiSamples = {};
+    uint32 MSQuality = {};
+    DXGI_FORMAT Format = {};
+    bool32 AutoGenMipMaps = {};
+    uint32 ArraySize = {};
+    bool32 CubeMap = {};
+    std::vector<ID3D11RenderTargetViewPtr> RTVArraySlices = {};
+    std::vector<ID3D11ShaderResourceViewPtr> SRVArraySlices = {};
 
     RenderTarget2D();
 
@@ -52,17 +52,17 @@ struct RenderTarget2D
 
 struct DepthStencilBuffer
 {
-    ID3D11Texture2DPtr Texture;
-    ID3D11DepthStencilViewPtr DSView;
-    ID3D11DepthStencilViewPtr ReadOnlyDSView;
-    ID3D11ShaderResourceViewPtr SRView;
-    uint32 Width;
-    uint32 Height;
-    uint32 MultiSamples;
-    uint32 MSQuality;
-    DXGI_FORMAT Format;
-    uint32 ArraySize;
-    std::vector<ID3D11DepthStencilViewPtr> ArraySlices;
+    ID3D11Texture2DPtr Texture = {};
+    ID3D11DepthStencilViewPtr DSView = {};
+    ID3D11DepthStencilViewPtr ReadOnlyDSView = {};
+    ID3D11ShaderResourceViewPtr SRView = {};
+    uint32 Width = {};
+    uint32 Height = {};
+    uint32 MultiSamples = {};
+    uint32 MSQuality = {};
+    DXGI_FORMAT Format = {};
+    uint32 ArraySize = {};
+    std::vector<ID3D11DepthStencilViewPtr> ArraySlices = {};
 
     DepthStencilBuffer();
 
@@ -78,14 +78,14 @@ struct DepthStencilBuffer
 
 struct RWBuffer
 {
-    ID3D11BufferPtr Buffer;
-    ID3D11ShaderResourceViewPtr SRView;
-    ID3D11UnorderedAccessViewPtr UAView;
-    uint32 Size;
-    uint32 Stride;
-    uint32 NumElements;
-    bool32 RawBuffer;
-    DXGI_FORMAT Format;
+    ID3D11BufferPtr Buffer = {};
+    ID3D11ShaderResourceViewPtr SRView = {};
+    ID3D11UnorderedAccessViewPtr UAView = {};
+    uint32 Size = {};
+    uint32 Stride = {};
+    uint32 NumElements = {};
+    bool32 RawBuffer = {};
+    DXGI_FORMAT Format = {};
 
     RWBuffer();
 
@@ -96,8 +96,8 @@ struct RWBuffer
 
 struct StagingBuffer
 {
-    ID3D11BufferPtr Buffer;
-    uint32 Size;
+    ID3D11BufferPtr Buffer = {};
+    uint32 Size = {};
 
     StagingBuffer();
 
@@ -108,14 +108,14 @@ struct StagingBuffer
 
 struct StagingTexture2D
 {
-    ID3D11Texture2DPtr Texture;
-    uint32 Width;
-    uint32 Height;
-    uint32 NumMipLevels;
-    uint32 MultiSamples;
-    uint32 MSQuality;
-    DXGI_FORMAT Format;
-    uint32 ArraySize;
+    ID3D11Texture2DPtr Texture = {};
+    uint32 Width = {};
+    uint32 Height = {};
+    uint32 NumMipLevels = {};
+    uint32 MultiSamples = {};
+    uint32 MSQuality = {};
+    DXGI_FORMAT Format = {};
+    uint32 ArraySize = {};
 
     StagingTexture2D();
 
@@ -134,13 +134,13 @@ struct StagingTexture2D
 
 struct StructuredBuffer
 {
-    ID3D11BufferPtr Buffer;
-    ID3D11ShaderResourceViewPtr SRView;
-    ID3D11UnorderedAccessViewPtr UAView;
-    uint32 Size;
-    uint32 Stride;
-    uint32 NumElements;
-    StagingBuffer DebugBuffer;
+    ID3D11BufferPtr Buffer = {};
+    ID3D11ShaderResourceViewPtr SRView = {};
+    ID3D11UnorderedAccessViewPtr UAView = {};
+    uint32 Size = {};
+    uint32 Stride = {};
+    uint32 NumElements = {};
+    StagingBuffer DebugBuffer = {};
 
     StructuredBuffer();
 
@@ -176,10 +176,10 @@ template<typename T> class ConstantBuffer
 {
 public:
 
-    T Data;
+    T Data = {};
 
-    ID3D11BufferPtr Buffer;
-    bool GPUWritable;
+    ID3D11BufferPtr Buffer = {};
+    bool GPUWritable = {};
 
 public:
 

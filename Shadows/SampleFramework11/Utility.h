@@ -31,14 +31,14 @@ inline UINT CBSize(UINT size)
 // Converts an ANSI string to a std::wstring
 inline std::wstring AnsiToWString(const char* ansiString)
 {
-    wchar buffer[512];
+    wchar buffer[512] = {};
     Win32Call(MultiByteToWideChar(CP_ACP, 0, ansiString, -1, buffer, 512));
     return std::wstring(buffer);
 }
 
 inline std::string WStringToAnsi(const wchar* wideString)
 {
-    char buffer[512];
+    char buffer[512] = {};
     Win32Call(WideCharToMultiByte(CP_ACP, 0, wideString, -1, buffer, 612, NULL, NULL));
     return std::string(buffer);
 }
@@ -68,7 +68,7 @@ inline void Split(const std::wstring& str, std::vector<std::wstring>& parts, con
 // Splits up a string using a delimiter
 inline std::vector<std::wstring> Split(const std::wstring& str, const std::wstring& delimiters = L" ")
 {
-    std::vector<std::wstring> parts;
+    std::vector<std::wstring> parts = {};
     Split(str, parts, delimiters);
     return parts;
 }
@@ -87,7 +87,7 @@ template<typename T> inline T Parse(const std::wstring& str)
 // Converts a number to a string
 template<typename T> inline std::wstring ToString(const T& val)
 {
-    std::wostringstream stream;
+    std::wostringstream stream = {};
     if (!(stream << val))
         throw Exception(L"Error converting value to string");
     return stream.str();
@@ -96,7 +96,7 @@ template<typename T> inline std::wstring ToString(const T& val)
 // Converts a number to an ansi string
 template<typename T> inline std::string ToAnsiString(const T& val)
 {
-    std::ostringstream stream;
+    std::ostringstream stream = {};
     if (!(stream << val))
         throw Exception(L"Error converting value to string");
     return stream.str();
@@ -138,7 +138,7 @@ inline uint32 GetIndex(const void* indices, uint32 idx, uint32 indexSize)
 // Sets the viewport for a given render target size
 inline void SetViewport(ID3D11DeviceContext* context, UINT rtWidth, UINT rtHeight)
 {
-    D3D11_VIEWPORT viewport;
+    D3D11_VIEWPORT viewport = {};
     viewport.Width = static_cast<float>(rtWidth);
     viewport.Height = static_cast<float>(rtHeight);
     viewport.MinDepth = 0.0f;
@@ -153,7 +153,7 @@ inline void SetViewport(ID3D11DeviceContext* context, UINT rtWidth, UINT rtHeigh
 inline void CopyBufferRegion(ID3D11DeviceContext* context, ID3D11Buffer* dstBuffer, ID3D11Buffer* srcBuffer,
                              uint32 dstOffset, uint32 srcOffset, uint32 srcSize)
 {
-    D3D11_BOX srcBox;
+    D3D11_BOX srcBox = {};
     srcBox.left = srcOffset;
     srcBox.right = srcOffset + srcSize;
     srcBox.top = 0;

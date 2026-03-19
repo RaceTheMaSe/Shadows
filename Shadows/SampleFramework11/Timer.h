@@ -47,46 +47,46 @@ public:
 
 protected:
 
-    int64 startTime;
+    int64 startTime = {};
 
-    int64 frequency;
-    double frequencyD;
+    int64 frequency = {};
+    double frequencyD = {};
 
-    int64 elapsed;
-    int64 delta;
+    int64 elapsed = {};
+    int64 delta = {};
 
-    float elapsedF;
-    float deltaF;
+    float elapsedF = {};
+    float deltaF = {};
 
-    double elapsedD;
-    double deltaD;
+    double elapsedD = {};
+    double deltaD = {};
 
-    int64 elapsedSeconds;
-    int64 deltaSeconds;
+    int64 elapsedSeconds = {};
+    int64 deltaSeconds = {};
 
-    float elapsedSecondsF;
-    float deltaSecondsF;
+    float elapsedSecondsF = {};
+    float deltaSecondsF = {};
 
-    double elapsedSecondsD;
-    double deltaSecondsD;
+    double elapsedSecondsD = {};
+    double deltaSecondsD = {};
 
-    int64 elapsedMilliseconds;
-    int64 deltaMilliseconds;
+    int64 elapsedMilliseconds = {};
+    int64 deltaMilliseconds = {};
 
-    float elapsedMillisecondsF;
-    float deltaMillisecondsF;
+    float elapsedMillisecondsF = {};
+    float deltaMillisecondsF = {};
 
-    double elapsedMillisecondsD;
-    double deltaMillisecondsD;
+    double elapsedMillisecondsD = {};
+    double deltaMillisecondsD = {};
 
-    int64 elapsedMicroseconds;
-    int64 deltaMicroseconds;
+    int64 elapsedMicroseconds = {};
+    int64 deltaMicroseconds = {};
 
-    float elapsedMicrosecondsF;
-    float deltaMicrosecondsF;
+    float elapsedMicrosecondsF = {};
+    float deltaMicrosecondsF = {};
 
-    double elapsedMicrosecondsD;
-    double deltaMicrosecondsD;
+    double elapsedMicrosecondsD = {};
+    double deltaMicrosecondsD = {};
 };
 
 }

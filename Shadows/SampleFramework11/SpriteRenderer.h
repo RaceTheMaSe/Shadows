@@ -38,9 +38,9 @@ public:
 
     struct SpriteDrawData
     {
-        Float4x4 Transform;
-        Float4 Color;
-        Float4 DrawRect;
+        Float4x4 Transform = {};
+        Float4 Color = {};
+        Float4 DrawRect = {};
     };
 
     SpriteRenderer();
@@ -70,39 +70,39 @@ protected:
 
     D3D11_TEXTURE2D_DESC SetPerBatchData(ID3D11ShaderResourceView* texture);
 
-    ID3D11DevicePtr device;
-    VertexShaderPtr vertexShader;
-    VertexShaderPtr vertexShaderInstanced;
-    PixelShaderPtr pixelShader;
-    ID3D11BufferPtr vertexBuffer;
-    ID3D11BufferPtr indexBuffer;
-    ID3D11BufferPtr vsPerBatchCB;
-    ID3D11BufferPtr vsPerInstanceCB;
-    ID3D11BufferPtr instanceDataBuffer;
-    ID3D11InputLayoutPtr inputLayout;
-    ID3D11InputLayoutPtr inputLayoutInstanced;
-    ID3D11DeviceContextPtr context;
+    ID3D11DevicePtr device = {};
+    VertexShaderPtr vertexShader = {};
+    VertexShaderPtr vertexShaderInstanced = {};
+    PixelShaderPtr pixelShader = {};
+    ID3D11BufferPtr vertexBuffer = {};
+    ID3D11BufferPtr indexBuffer = {};
+    ID3D11BufferPtr vsPerBatchCB = {};
+    ID3D11BufferPtr vsPerInstanceCB = {};
+    ID3D11BufferPtr instanceDataBuffer = {};
+    ID3D11InputLayoutPtr inputLayout = {};
+    ID3D11InputLayoutPtr inputLayoutInstanced = {};
+    ID3D11DeviceContextPtr context = {};
 
-    ID3D11RasterizerStatePtr rastState;
-    ID3D11DepthStencilStatePtr dsState;
-    ID3D11BlendStatePtr alphaBlendState;
-    ID3D11SamplerStatePtr linearSamplerState;
-    ID3D11SamplerStatePtr pointSamplerState;
+    ID3D11RasterizerStatePtr rastState = {};
+    ID3D11DepthStencilStatePtr dsState = {};
+    ID3D11BlendStatePtr alphaBlendState = {};
+    ID3D11SamplerStatePtr linearSamplerState = {};
+    ID3D11SamplerStatePtr pointSamplerState = {};
 
-    bool initialized;
+    bool initialized = {};
 
-    SpriteDrawData textDrawData [MaxBatchSize];
+    SpriteDrawData textDrawData [MaxBatchSize] = {};
 
     struct SpriteVertex
     {
-        Float2 Position;
-        Float2 TexCoord;
+        Float2 Position = {};
+        Float2 TexCoord = {};
     };
 
     struct VSPerBatchCB
     {
-        Float2 TextureSize;
-        Float2 ViewportSize;
+        Float2 TextureSize = {};
+        Float2 ViewportSize = {};
     };
 };
 

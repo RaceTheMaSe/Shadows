@@ -47,17 +47,17 @@ protected:
         ID3D11QueryPtr DisjointQuery[QueryLatency];
         ID3D11QueryPtr TimestampStartQuery[QueryLatency];
         ID3D11QueryPtr TimestampEndQuery[QueryLatency];
-        bool QueryStarted;
-        bool QueryFinished;
-        bool Active;
+        bool QueryStarted = {};
+        bool QueryFinished = {};
+        bool Active = {};
 
-        bool CPUProfile;
-        int64 StartTime;
-        int64 EndTime;
+        bool CPUProfile = {};
+        int64 StartTime = {};
+        int64 EndTime = {};
 
         static const uint32 FilterSize = 64;
-        float TimeSamples[FilterSize];
-        uint32 CurrSample;
+        float TimeSamples[FilterSize] = {};
+        uint32 CurrSample = {};
 
         ProfileData() : QueryStarted(false), QueryFinished(false), Active(false),
                         CPUProfile(false), StartTime(0), EndTime(0), CurrSample(0)
@@ -69,13 +69,13 @@ protected:
 
     typedef std::map<std::wstring, ProfileData> ProfileMap;
 
-    ProfileMap profiles;
-    uint64 currFrame;
+    ProfileMap profiles = {};
+    uint64 currFrame = {};
 
-    ID3D11DevicePtr device;
-    ID3D11DeviceContextPtr context;
+    ID3D11DevicePtr device = {};
+    ID3D11DeviceContextPtr context = {};
 
-    Timer timer;
+    Timer timer = {};
 };
 
 class ProfileBlock
@@ -87,7 +87,7 @@ public:
 
 protected:
 
-    std::wstring name;
+    std::wstring name = {};
 };
 
 class CPUProfileBlock
@@ -99,7 +99,7 @@ public:
 
 protected:
 
-    std::wstring name;
+    std::wstring name = {};
 };
 
 }

@@ -46,14 +46,14 @@ class CompiledShader
 
 public:
 
-    ID3D11DeviceChildPtr ShaderPtr;
-    std::wstring FilePath;
-    std::string FunctionName;
-    std::string Profile;
-    CompileOptions CompileOpts;
-    bool ForceOptimization;
-    ID3DBlobPtr ByteCode;
-    const std::type_info* Type;
+    ID3D11DeviceChildPtr ShaderPtr = {};
+    std::wstring FilePath = {};
+    std::string FunctionName = {};
+    std::string Profile = {};
+    CompileOptions CompileOpts = {};
+    bool ForceOptimization = {};
+    ID3DBlobPtr ByteCode = {};
+    const std::type_info* Type = {};
 
     CompiledShader(const wchar* filePath, const char* functionName,
                    const char* profile, const CompileOptions& compileOptions,

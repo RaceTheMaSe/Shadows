@@ -43,14 +43,14 @@ class Setting
 
 protected:
 
-    TwBar* tweakBar;
-    SettingType type;
-    void* data;
-    std::string name;
-    std::string group;
-    std::string label;
-    std::string helpText;
-    bool changed;
+    TwBar* tweakBar = {};
+    SettingType type = {};
+    void* data = {};
+    std::string name = {};
+    std::string group = {};
+    std::string label = {};
+    std::string helpText = {};
+    bool changed = {};
 
     void Initialize(TwBar* tweakBar, SettingType type, void* data, const char* name,
                     const char* group, const char* label, const char* helpText,
@@ -84,11 +84,11 @@ class FloatSetting : public Setting
 
 private:
 
-    float val;
-    float oldVal;
-    float minVal;
-    float maxVal;
-    float step;
+    float val = {};
+    float oldVal = {};
+    float minVal = {};
+    float maxVal = {};
+    float step = {};
 
 public:
 
@@ -114,10 +114,10 @@ class IntSetting : public Setting
 
 private:
 
-    int32 val;
-    int32 oldVal;
-    int32 minVal;
-    int32 maxVal;
+    int32 val = {};
+    int32 oldVal = {};
+    int32 minVal = {};
+    int32 maxVal = {};
 
 public:
 
@@ -140,8 +140,8 @@ class BoolSetting : public Setting
 
 private:
 
-    bool32 val;
-    int32 oldVal;
+    bool32 val = {};
+    int32 oldVal = {};
 
 public:
 
@@ -163,9 +163,9 @@ class EnumSetting : public Setting
 
 protected:
 
-    uint32 val;
-    uint32 oldVal;
-    uint32 numValues;
+    uint32 val = {};
+    uint32 oldVal = {};
+    uint32 numValues = {};
 
 public:
 
@@ -218,8 +218,8 @@ class DirectionSetting : public Setting
 
 private:
 
-    Float3 val;
-    Float3 oldVal;
+    Float3 val = {};
+    Float3 oldVal = {};
 
 public:
 
@@ -241,8 +241,8 @@ class OrientationSetting : public Setting
 
 private:
 
-    Quaternion val;
-    Quaternion oldVal;
+    Quaternion val = {};
+    Quaternion oldVal = {};
 
 public:
 
@@ -264,11 +264,11 @@ class ColorSetting : public Setting
 
 private:
 
-    Float3 val;
-    Float3 oldVal;
+    Float3 val = {};
+    Float3 oldVal = {};
 
-    FloatSetting intensity;
-    bool hdr;
+    FloatSetting intensity = {};
+    bool hdr = {};
 
 public:
 
@@ -291,9 +291,9 @@ class SettingsContainer
 
 private:
 
-    TwBar* tweakBar;
-    std::map<std::string, Setting*> settings;
-    std::vector<Setting*> allocatedSettings;
+    TwBar* tweakBar = {};
+    std::map<std::string, Setting*> settings = {};
+    std::vector<Setting*> allocatedSettings = {};
 
 public:
 

@@ -235,8 +235,8 @@ struct Float4x4 : public XMFLOAT4X4
 // Unsigned 32-bit integer vector classes
 struct Uint2
 {
-    uint32 x;
-    uint32 y;
+    uint32 x = {};
+    uint32 y = {};
 
     Uint2();
     Uint2(uint32 x, uint32 y);
@@ -244,9 +244,9 @@ struct Uint2
 
 struct Uint3
 {
-    uint32 x;
-    uint32 y;
-    uint32 z;
+    uint32 x = {};
+    uint32 y = {};
+    uint32 z = {};
 
     Uint3();
     Uint3(uint32 x, uint32 y, uint32 z);
@@ -254,10 +254,10 @@ struct Uint3
 
 struct Uint4
 {
-    uint32 x;
-    uint32 y;
-    uint32 z;
-    uint32 w;
+    uint32 x = {};
+    uint32 y = {};
+    uint32 z = {};
+    uint32 w = {};
 
     Uint4();
     Uint4(uint32 x, uint32 y, uint32 z, uint32 w);

@@ -16,8 +16,8 @@ namespace SampleFramework11
 
 struct Hash
 {
-    uint64 A;
-    uint64 B;
+    uint64 A = {};
+    uint64 B = {};
 
     Hash() : A(0), B(0) {}
     Hash(uint64 a, uint64 b) : A(a), B(b) {}

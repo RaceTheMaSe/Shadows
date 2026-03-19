@@ -26,12 +26,12 @@ public:
 
     struct Constants
     {
-        float BloomThreshold;
-        float BloomMagnitude;
-        float BloomBlurSigma;
-        float Tau;
-        float TimeDelta;
-        float KeyValue;
+        float BloomThreshold = {};
+        float BloomMagnitude = {};
+        float BloomBlurSigma = {};
+        float Tau = {};
+        float TimeDelta = {};
+        float KeyValue = {};
     };
 
     void Initialize(ID3D11Device* device);
@@ -52,20 +52,20 @@ protected:
     void ToneMap(ID3D11ShaderResourceView* input, ID3D11ShaderResourceView* bloom,
                  ID3D11RenderTargetView* output);
 
-    PixelShaderPtr bloomThreshold;
-    PixelShaderPtr bloomBlurH;
-    PixelShaderPtr bloomBlurV;
-    PixelShaderPtr luminanceMap;
-    PixelShaderPtr composite;
-    PixelShaderPtr scale;
-    PixelShaderPtr adaptLuminance;
-    PixelShaderPtr drawDepth;
-    PixelShaderPtr drawDepthMSAA;
+    PixelShaderPtr bloomThreshold = {};
+    PixelShaderPtr bloomBlurH = {};
+    PixelShaderPtr bloomBlurV = {};
+    PixelShaderPtr luminanceMap = {};
+    PixelShaderPtr composite = {};
+    PixelShaderPtr scale = {};
+    PixelShaderPtr adaptLuminance = {};
+    PixelShaderPtr drawDepth = {};
+    PixelShaderPtr drawDepthMSAA = {};
 
-    RenderTarget2D adaptedLuminance[2];
-    RenderTarget2D exposureMap;
+    RenderTarget2D adaptedLuminance[2] = {};
+    RenderTarget2D exposureMap = {};
 
-    uint64 currLumTarget;
+    uint64 currLumTarget = {};
 
-    ConstantBuffer<Constants> constantBuffer;
+    ConstantBuffer<Constants> constantBuffer = {};
 };

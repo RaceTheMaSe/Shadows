@@ -21,13 +21,13 @@ class BlendStates
 
 protected:
 
-    ID3D11BlendStatePtr blendDisabled;
-    ID3D11BlendStatePtr additiveBlend;
-    ID3D11BlendStatePtr alphaBlend;
-    ID3D11BlendStatePtr pmAlphaBlend;
-    ID3D11BlendStatePtr noColor;
-    ID3D11BlendStatePtr alphaToCoverage;
-    ID3D11BlendStatePtr opacityBlend;
+    ID3D11BlendStatePtr blendDisabled = {};
+    ID3D11BlendStatePtr additiveBlend = {};
+    ID3D11BlendStatePtr alphaBlend = {};
+    ID3D11BlendStatePtr pmAlphaBlend = {};
+    ID3D11BlendStatePtr noColor = {};
+    ID3D11BlendStatePtr alphaToCoverage = {};
+    ID3D11BlendStatePtr opacityBlend = {};
 
 public:
 
@@ -56,14 +56,14 @@ class RasterizerStates
 
 protected:
 
-    ID3D11RasterizerStatePtr noCull;
-    ID3D11RasterizerStatePtr cullBackFaces;
-    ID3D11RasterizerStatePtr cullBackFacesScissor;
-    ID3D11RasterizerStatePtr cullFrontFaces;
-    ID3D11RasterizerStatePtr cullFrontFacesScissor;
-    ID3D11RasterizerStatePtr noCullNoMS;
-    ID3D11RasterizerStatePtr noCullScissor;
-    ID3D11RasterizerStatePtr wireframe;
+    ID3D11RasterizerStatePtr noCull = {};
+    ID3D11RasterizerStatePtr cullBackFaces = {};
+    ID3D11RasterizerStatePtr cullBackFacesScissor = {};
+    ID3D11RasterizerStatePtr cullFrontFaces = {};
+    ID3D11RasterizerStatePtr cullFrontFacesScissor = {};
+    ID3D11RasterizerStatePtr noCullNoMS = {};
+    ID3D11RasterizerStatePtr noCullScissor = {};
+    ID3D11RasterizerStatePtr wireframe = {};
 
 public:
 
@@ -91,13 +91,13 @@ public:
 
 class DepthStencilStates
 {
-    ID3D11DepthStencilStatePtr depthDisabled;
-    ID3D11DepthStencilStatePtr depthEnabled;
-    ID3D11DepthStencilStatePtr revDepthEnabled;
-    ID3D11DepthStencilStatePtr depthWriteEnabled;
-    ID3D11DepthStencilStatePtr revDepthWriteEnabled;
-    ID3D11DepthStencilStatePtr depthStencilWriteEnabled;
-    ID3D11DepthStencilStatePtr stencilEnabled;
+    ID3D11DepthStencilStatePtr depthDisabled = {};
+    ID3D11DepthStencilStatePtr depthEnabled = {};
+    ID3D11DepthStencilStatePtr revDepthEnabled = {};
+    ID3D11DepthStencilStatePtr depthWriteEnabled = {};
+    ID3D11DepthStencilStatePtr revDepthWriteEnabled = {};
+    ID3D11DepthStencilStatePtr depthStencilWriteEnabled = {};
+    ID3D11DepthStencilStatePtr stencilEnabled = {};
 
 public:
 
@@ -124,13 +124,13 @@ public:
 class SamplerStates
 {
 
-    ID3D11SamplerStatePtr linear;
-    ID3D11SamplerStatePtr linearClamp;
-    ID3D11SamplerStatePtr linearBorder;
-    ID3D11SamplerStatePtr point;
-    ID3D11SamplerStatePtr anisotropic;
-    ID3D11SamplerStatePtr shadowMap;
-    ID3D11SamplerStatePtr shadowMapPCF;
+    ID3D11SamplerStatePtr linear = {};
+    ID3D11SamplerStatePtr linearClamp = {};
+    ID3D11SamplerStatePtr linearBorder = {};
+    ID3D11SamplerStatePtr point = {};
+    ID3D11SamplerStatePtr anisotropic = {};
+    ID3D11SamplerStatePtr shadowMap = {};
+    ID3D11SamplerStatePtr shadowMapPCF = {};
 public:
 
     void Initialize(ID3D11Device* device);

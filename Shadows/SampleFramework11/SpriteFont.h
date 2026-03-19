@@ -34,10 +34,10 @@ public:
 
     struct CharDesc
     {
-        float X;
-        float Y;
-        float Width;
-        float Height;
+        float X = {};
+        float Y = {};
+        float Width = {};
+        float Height = {};
     };
 
     static const wchar StartChar = '!';
@@ -66,13 +66,13 @@ public:
 
 protected:
 
-    ID3D11Texture2DPtr texture;
-    ID3D11ShaderResourceViewPtr srView;
-    CharDesc charDescs [NumChars];
-    float size;
-    UINT texHeight;
-    float spaceWidth;
-    float charHeight;
+    ID3D11Texture2DPtr texture = {};
+    ID3D11ShaderResourceViewPtr srView = {};
+    CharDesc charDescs [NumChars] = {};
+    float size = {};
+    UINT texHeight = {};
+    float spaceWidth = {};
+    float charHeight = {};
 };
 
 }

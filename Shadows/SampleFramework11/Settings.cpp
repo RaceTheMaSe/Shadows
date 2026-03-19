@@ -562,6 +562,6 @@ void SettingsContainer::AddSetting(Setting* setting)
 }
 
 // Global definition
-SettingsContainer Settings;
+SettingsContainer Settings = {};
 
 }

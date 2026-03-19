@@ -65,28 +65,28 @@ protected:
     void AfterReset();
     void PrepareFullScreenSettings();
 
-    IDXGIFactory1Ptr                factory;
-    IDXGIAdapter1Ptr                adapter;
-    IDXGIOutputPtr                  output;
+    IDXGIFactory1Ptr                factory = {};
+    IDXGIAdapter1Ptr                adapter = {};
+    IDXGIOutputPtr                  output = {};
 
-    ID3D11DevicePtr                 device;
-    ID3D11DeviceContextPtr          immediateContext;
-    IDXGISwapChainPtr               swapChain;
-    ID3D11Texture2DPtr              bbTexture;
-    ID3D11RenderTargetViewPtr       bbRTView;
+    ID3D11DevicePtr                 device = {};
+    ID3D11DeviceContextPtr          immediateContext = {};
+    IDXGISwapChainPtr               swapChain = {};
+    ID3D11Texture2DPtr              bbTexture = {};
+    ID3D11RenderTargetViewPtr       bbRTView = {};
 
-    DXGI_FORMAT                 backBufferFormat;
-    uint32                      backBufferWidth;
-    uint32                      backBufferHeight;
-    uint32                      msCount;
-    uint32                      msQuality;
-    bool                        fullScreen;
-    bool                        vsync;
-    DXGI_RATIONAL               refreshRate;
-    uint32                      numVSYNCIntervals;
+    DXGI_FORMAT                 backBufferFormat = {};
+    uint32                      backBufferWidth = {};
+    uint32                      backBufferHeight = {};
+    uint32                      msCount = {};
+    uint32                      msQuality = {};
+    bool                        fullScreen = {};
+    bool                        vsync = {};
+    DXGI_RATIONAL               refreshRate = {};
+    uint32                      numVSYNCIntervals = {};
 
-    D3D_FEATURE_LEVEL           featureLevel;
-    D3D_FEATURE_LEVEL           minFeatureLevel;
+    D3D_FEATURE_LEVEL           featureLevel = {};
+    D3D_FEATURE_LEVEL           minFeatureLevel = {};
 };
 
 }

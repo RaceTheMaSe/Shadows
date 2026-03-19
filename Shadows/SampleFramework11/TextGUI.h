@@ -36,12 +36,12 @@ protected:
     TextGUI(const wchar* name, uint32 value, uint32 numValues, KeyboardState::Keys toggleKey);
     void SetNames(const wchar** valueNames);
 
-    std::wstring name;
-    uint32 value;
-    uint32 numValues;
-    std::vector<std::wstring> valueNames;
-    KeyboardState::Keys toggleKey;
-    bool changed;
+    std::wstring name = {};
+    uint32 value = {};
+    uint32 numValues = {};
+    std::vector<std::wstring> valueNames = {};
+    KeyboardState::Keys toggleKey = {};
+    bool changed = {};
 };
 
 class BoolGUI : public TextGUI

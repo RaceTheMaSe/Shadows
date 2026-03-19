@@ -21,17 +21,17 @@ class SDKMesh;
 
 struct MeshMaterial
 {
-    Float3 AmbientAlbedo;
-    Float3 DiffuseAlbedo;
-    Float3 SpecularAlbedo;
-    Float3 Emissive;
-    float SpecularPower;
-    float Alpha;
-    std::wstring DiffuseMapName;
-    std::wstring NormalMapName;
-    ID3D11ShaderResourceViewPtr DiffuseMap;
-    ID3D11ShaderResourceViewPtr NormalMap;
-    std::string Name;
+    Float3 AmbientAlbedo = {};
+    Float3 DiffuseAlbedo = {};
+    Float3 SpecularAlbedo = {};
+    Float3 Emissive = {};
+    float SpecularPower = {};
+    float Alpha = {};
+    std::wstring DiffuseMapName = {};
+    std::wstring NormalMapName = {};
+    ID3D11ShaderResourceViewPtr DiffuseMap = {};
+    ID3D11ShaderResourceViewPtr NormalMap = {};
+    std::string Name = {};
 
     MeshMaterial() : SpecularPower(1.0f), Alpha(1.0f)
     {
@@ -40,11 +40,11 @@ struct MeshMaterial
 
 struct MeshPart
 {
-    uint32 VertexStart;
-    uint32 VertexCount;
-    uint32 IndexStart;
-    uint32 IndexCount;
-    uint32 MaterialIdx;
+    uint32 VertexStart = {};
+    uint32 VertexCount = {};
+    uint32 IndexStart = {};
+    uint32 IndexCount = {};
+    uint32 MaterialIdx = {};
 
     MeshPart() : VertexStart(0), VertexCount(0), IndexStart(0), IndexCount(0), MaterialIdx(0)
     {
@@ -108,22 +108,22 @@ protected:
     void GenerateTangentFrame();
     void CreateInputElements(const D3DVERTEXELEMENT9* declaration);
 
-    ID3D11BufferPtr vertexBuffer;
-    ID3D11BufferPtr indexBuffer;
+    ID3D11BufferPtr vertexBuffer = {};
+    ID3D11BufferPtr indexBuffer = {};
 
-    std::vector<MeshPart> meshParts;
-    std::vector<D3D11_INPUT_ELEMENT_DESC> inputElements;
+    std::vector<MeshPart> meshParts = {};
+    std::vector<D3D11_INPUT_ELEMENT_DESC> inputElements = {};
 
-    uint32 vertexStride;
-    uint32 numVertices;
-    uint32 numIndices;
+    uint32 vertexStride = {};
+    uint32 numVertices = {};
+    uint32 numIndices = {};
 
-    IndexType indexType;
+    IndexType indexType = {};
 
-    std::vector<std::string> inputElementNames;
+    std::vector<std::string> inputElementNames = {};
 
-    std::vector<uint8> vertices;
-    std::vector<uint8> indices;
+    std::vector<uint8> vertices = {};
+    std::vector<uint8> indices = {};
 
     std::string name;
 };
@@ -164,8 +164,8 @@ protected:
 
     static void LoadMaterialResources(MeshMaterial& material, const std::wstring& directory, ID3D11Device* device);
 
-    std::vector<Mesh> meshes;
-    std::vector<MeshMaterial> meshMaterials;
+    std::vector<Mesh> meshes = {};
+    std::vector<MeshMaterial> meshMaterials = {};
 };
 
 }

@@ -63,37 +63,37 @@ protected:
 
     struct VSConstants
     {
-        Float4x4 View;
-        Float4x4 Projection;
-        Float3 Bias;
+        Float4x4 View = {};
+        Float4x4 Projection = {};
+        Float3 Bias = {};
     };
 
     struct GSConstants
     {
-        uint32 RTIndex;
+        uint32 RTIndex = {};
     };
 
     struct PSConstants
     {
-        Float3 SunDirection;
-        float pad;
-        uint32 EnableSun;
+        Float3 SunDirection = {};
+        float pad = {};
+        uint32 EnableSun = {};
     };
 
-    VertexShaderPtr vertexShader;
-    GeometryShaderPtr geometryShader;
-    PixelShaderPtr emPixelShader;
-    PixelShaderPtr skyPixelShader;
-    ID3D11InputLayoutPtr inputLayout;
-    ID3D11BufferPtr vertexBuffer;
-    ID3D11BufferPtr indexBuffer;
-    ID3D11BufferPtr vsConstantBuffer;
-    ID3D11BufferPtr gsConstantBuffer;
-    ID3D11BufferPtr psConstantBuffer;
-    ID3D11DepthStencilStatePtr dsState;
-    ID3D11BlendStatePtr blendState;
-    ID3D11RasterizerStatePtr rastState;
-    ID3D11SamplerStatePtr samplerState;
+    VertexShaderPtr vertexShader = {};
+    GeometryShaderPtr geometryShader = {};
+    PixelShaderPtr emPixelShader = {};
+    PixelShaderPtr skyPixelShader = {};
+    ID3D11InputLayoutPtr inputLayout = {};
+    ID3D11BufferPtr vertexBuffer = {};
+    ID3D11BufferPtr indexBuffer = {};
+    ID3D11BufferPtr vsConstantBuffer = {};
+    ID3D11BufferPtr gsConstantBuffer = {};
+    ID3D11BufferPtr psConstantBuffer = {};
+    ID3D11DepthStencilStatePtr dsState = {};
+    ID3D11BlendStatePtr blendState = {};
+    ID3D11RasterizerStatePtr rastState = {};
+    ID3D11SamplerStatePtr samplerState = {};
 };
 
 }

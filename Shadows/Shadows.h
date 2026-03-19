@@ -36,17 +36,17 @@ protected:
     FirstPersonCamera camera;
     FirstPersonCamera cameraForShadows;
 
-    Skybox skybox;
+    Skybox skybox = {};
 
-    PostProcessor postProcessor;
-    DepthStencilBuffer depthBuffer;
-    RenderTarget2D colorTarget;
-    RenderTarget2D resolveTarget;
+    PostProcessor postProcessor = {};
+    DepthStencilBuffer depthBuffer = {};
+    RenderTarget2D colorTarget = {};
+    RenderTarget2D resolveTarget = {};
 
     // Model
-    Model models[uint64(Scene::NumValues)];
-    Model characterMesh;
-    MeshRenderer meshRenderer;
+    Model models[uint64(Scene::NumValues)] = {};
+    Model characterMesh = {};
+    MeshRenderer meshRenderer = {};
 
     virtual void Initialize() override;
     virtual void Render(const Timer& timer) override;

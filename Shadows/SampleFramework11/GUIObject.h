@@ -38,8 +38,8 @@ public:
 
 protected:
 
-    XMFLOAT2 position;
-    bool enabled;
+    XMFLOAT2 position = {};
+    bool enabled = {};
 
     // Global shared resources
     static SpriteFont font;
