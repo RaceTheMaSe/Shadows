@@ -133,8 +133,8 @@ void Camera::SetProjection(const Float4x4& newProjection)
 OrthographicCamera::OrthographicCamera(float minX, float minY, float maxX,
                                        float maxY, float nearClip, float farClip) : Camera(nearClip, farClip),
                                                                                     xMin(minX),
-                                                                                    yMin(minY),
                                                                                     xMax(maxX),
+                                                                                    yMin(minY),
                                                                                     yMax(maxY)
 
 {

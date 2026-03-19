@@ -32,10 +32,10 @@ DeviceManager::DeviceManager()  :  backBufferFormat(DXGI_FORMAT_R8G8B8A8_UNORM_S
                                    msCount(1),
                                    msQuality(0),
                                    fullScreen(false),
-                                   featureLevel(D3D_FEATURE_LEVEL_11_0),
-                                   minFeatureLevel(D3D_FEATURE_LEVEL_10_0),
                                    vsync(true),
-                                   numVSYNCIntervals(1)
+                                   numVSYNCIntervals(1),
+                                   featureLevel(D3D_FEATURE_LEVEL_11_0),
+                                   minFeatureLevel(D3D_FEATURE_LEVEL_10_0)
 {
     refreshRate.Numerator = 60;
     refreshRate.Denominator = 1;

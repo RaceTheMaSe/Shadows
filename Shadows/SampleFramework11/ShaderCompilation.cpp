@@ -223,7 +223,7 @@ struct ShaderFile
     uint64 TimeStamp;
     vector<CompiledShader*> Shaders;
 
-    ShaderFile(const wstring& filePath) : TimeStamp(0), FilePath(filePath)
+    ShaderFile(const wstring& filePath) : FilePath(filePath), TimeStamp(0)
     {
     }
 };

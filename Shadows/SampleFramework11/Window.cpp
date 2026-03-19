@@ -23,11 +23,11 @@ Window::Window(	HINSTANCE hinstance,
 				LPCWSTR iconResource,
 				LPCWSTR smallIconResource,
 				LPCWSTR menuResource,
-				LPCWSTR accelResource) :	style(style),
-											exStyle(exStyle),
-											appName(name),
+				LPCWSTR accelResource) :	hwnd(NULL),
 											hinstance(hinstance),
-											hwnd(NULL)
+											appName(name),
+											style(style),
+											exStyle(exStyle)
 {
 	if (hinstance == NULL)
 		this->hinstance = GetModuleHandle(NULL);
@@ -268,11 +268,11 @@ void Window::Destroy()
 LRESULT Window::MessageHandler(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
     if(TwEventWin(hWnd, uMsg, wParam, lParam))
-        return 0;
+		return 0;
 
 	if(messageCallbacks.find(uMsg) != messageCallbacks.end())
 	{
-        Callback callback = messageCallbacks[uMsg];
+		Callback callback = messageCallbacks[uMsg];
 		MsgFunction msgFunction = callback.Function;
 		return msgFunction(callback.Context, hWnd, uMsg, wParam, lParam);
 	}

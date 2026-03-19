@@ -148,7 +148,7 @@ void SpriteFont::Initialize(LPCWSTR fontName, float fontSize, UINT fontStyle, bo
             int charWidth = maxX - minX + 1;
 
             // Figure out if we need to move to the next row
-            if (currentX + charWidth >= TexWidth)
+            if (currentX + charWidth >= (int)TexWidth)
             {
                 currentX = 0;
                 currentY += static_cast<int>(charHeight) + 1;

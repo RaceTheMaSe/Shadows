@@ -220,7 +220,7 @@ void BoolSetting::Initialize(TwBar* tweakBar_, const char* name_,
 
 void BoolSetting::Update()
 {
-    changed = oldVal != val;
+    changed = oldVal != (int32)val;
     oldVal = val;
 }
 

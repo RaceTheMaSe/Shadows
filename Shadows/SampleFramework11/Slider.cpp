@@ -24,8 +24,8 @@ Slider::Slider() :  size(200.0f, 25.0f),
                     numSteps(100),
                     value(0),
                     dragging(false),
-                    hover(false),
                     dragValue(0),
+                    hover(false),
                     mouseDown(false),
                     changed(false)
 {

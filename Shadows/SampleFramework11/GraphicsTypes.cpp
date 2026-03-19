@@ -21,14 +21,14 @@ namespace SampleFramework11
 
 // == RenderTarget2D ==============================================================================
 
-RenderTarget2D::RenderTarget2D() :  Width(0),
+RenderTarget2D::RenderTarget2D() :  UAView(0),
+                                    Width(0),
                                     Height(0),
-                                    Format(DXGI_FORMAT_UNKNOWN),
                                     NumMipLevels(0),
                                     MultiSamples(0),
                                     MSQuality(0),
+                                    Format(DXGI_FORMAT_UNKNOWN),
                                     AutoGenMipMaps(false),
-                                    UAView(0),
                                     ArraySize(1)
 {
 
@@ -306,7 +306,7 @@ void DepthStencilBuffer::Initialize(ID3D11Device* device,
 
 // == RWBuffer ====================================================================================
 
-RWBuffer::RWBuffer() : Size(0), Stride(0), NumElements(0), Format(DXGI_FORMAT_UNKNOWN), RawBuffer(false)
+RWBuffer::RWBuffer() : Size(0), Stride(0), NumElements(0), RawBuffer(false), Format(DXGI_FORMAT_UNKNOWN)
 {
 
 }
@@ -564,10 +564,10 @@ void StagingBuffer::Unmap(ID3D11DeviceContext* context)
 
 StagingTexture2D::StagingTexture2D() :  Width(0),
                                         Height(0),
-                                        Format(DXGI_FORMAT_UNKNOWN),
                                         NumMipLevels(0),
                                         MultiSamples(0),
                                         MSQuality(0),
+                                        Format(DXGI_FORMAT_UNKNOWN),
                                         ArraySize(1)
 {
 }

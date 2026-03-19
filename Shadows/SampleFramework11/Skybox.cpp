@@ -292,7 +292,7 @@ void Skybox::RenderSky( ID3D11DeviceContext* context,
     D3DPERF_EndEvent();
 }
 
-const float AngleBetween(const Float3& dir0, const Float3& dir1)
+float AngleBetween(const Float3& dir0, const Float3& dir1)
 {
     return std::acos(Float3::Dot(dir0, dir1));
 }

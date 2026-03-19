@@ -166,7 +166,7 @@ static HRESULT LoadTextureDataFromFile( _In_z_ const wchar_t* fileName,
     }
 
     // Get the file size
-    LARGE_INTEGER FileSize = { 0 };
+    LARGE_INTEGER FileSize = { };
 
 #if (_WIN32_WINNT >= _WIN32_WINNT_VISTA)
     FILE_STANDARD_INFO fileInfo;

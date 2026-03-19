@@ -146,7 +146,7 @@ LRESULT App::OnWindowResized(void* context, HWND hWnd, UINT msg, WPARAM wParam, 
         int width, height;
         app->window.GetClientArea(width, height);
 
-        if(width != app->deviceManager.BackBufferWidth() || height != app->deviceManager.BackBufferHeight())
+        if(width != (int)app->deviceManager.BackBufferWidth() || height != (int)app->deviceManager.BackBufferHeight())
         {
             app->BeforeReset();
 
