@@ -13,7 +13,9 @@
 
 // This version only supports UNICODE.
 #include "PCH.h"
+#ifndef _MSC_VER
 #include "dxerr9.h"
+#endif
 
 #define XAUDIO2_E_INVALID_CALL          0x88960001
 #define XAUDIO2_E_XMA_DECODER_ERROR     0x88960002

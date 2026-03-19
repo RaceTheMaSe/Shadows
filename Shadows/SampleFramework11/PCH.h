@@ -48,8 +48,8 @@
 #include <crtdbg.h>
 
 // MSVC COM Support
-// #include <comip.h>
 #include <comdef.h>
+#include <comip.h>
 
 // GDI+
 #include <gdiplus.h>

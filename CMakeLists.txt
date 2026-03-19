@@ -31,7 +31,11 @@ target_link_libraries(${PROJECT_NAME}
     dxgi d3d9 d3d11 d3dcompiler
     AntTweakBar64
 )
-target_link_options(${PROJECT_NAME} PRIVATE -mwindows)
+if(MSVC)
+    target_link_options(${PROJECT_NAME} PRIVATE /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup)
+else()
+    target_link_options(${PROJECT_NAME} PRIVATE -mwindows)
+endif()
 
 install(TARGETS ${PROJECT_NAME} DESTINATION .)
 install(FILES ${SHADERS} DESTINATION .)
